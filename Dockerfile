@@ -10,4 +10,5 @@ RUN apk add --no-cache --virtual .build build-base \
   && apk del --no-cache .build
 
 WORKDIR /work
-ENTRYPOINT ["ridgepole"]
+COPY entrypoint.sh /
+ENTRYPOINT ["/entrypoint.sh"]
